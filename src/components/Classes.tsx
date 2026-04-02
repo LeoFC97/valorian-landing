@@ -39,7 +39,7 @@ export default function Classes() {
       ))}
 
       {/* Clickable buttons on top of everything */}
-      <div className="absolute bottom-[2%] left-1/2 -translate-x-1/2 z-50 flex gap-[3vw]">
+      <div className="absolute bottom-[6%] left-1/2 -translate-x-1/2 z-50 flex gap-[3vw]">
         {categories.map(cat => {
           const specs = classes.filter(c => c.category === cat);
           return (
