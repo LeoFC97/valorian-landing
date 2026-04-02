@@ -2,28 +2,19 @@ import logo from "../assets/images/logo.png";
 import heroPaladin from "../assets/images/hero-paladin.png";
 import playButtonBg from "../assets/images/play-button-bg.png";
 import timelineOrnament from "../assets/images/timeline-ornament.png";
+import heroBg from "../assets/images/team-bg.png";
 
-const navLinks = ["Home", "Lore", "Gameplay", "Classes", "Team", "Founder"];
+const navLinks = ["Home", "Lore", "Gameplay", "Classes", "Founder"];
 
 export default function Hero() {
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black">
-      {/* Dark atmospheric background */}
+      {/* Medieval city background */}
       <div className="absolute inset-0">
-        {/* Atmospheric gradient to simulate medieval arena scene */}
+        <img src={heroBg} alt="" className="absolute inset-0 w-full h-full object-cover opacity-40" />
+        {/* Darken and vignette */}
         <div className="absolute inset-0" style={{
-          background: `
-            radial-gradient(ellipse at 50% 40%, rgba(30,25,15,0.6) 0%, rgba(0,0,0,0.95) 70%),
-            radial-gradient(ellipse at 30% 30%, rgba(60,40,10,0.15) 0%, transparent 50%),
-            radial-gradient(ellipse at 70% 35%, rgba(40,30,10,0.1) 0%, transparent 40%),
-            radial-gradient(circle at 25% 20%, rgba(255,150,50,0.03) 0%, transparent 20%),
-            radial-gradient(circle at 75% 20%, rgba(255,150,50,0.03) 0%, transparent 20%)
-          `,
-        }} />
-        {/* Subtle stone texture via noise */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
-          backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 256 256\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'n\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.9\' numOctaves=\'4\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'256\' height=\'256\' filter=\'url(%23n)\' opacity=\'1\'/%3E%3C/svg%3E")',
-          backgroundSize: '256px 256px',
+          background: 'radial-gradient(ellipse at 50% 40%, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.85) 70%)',
         }} />
       </div>
 
@@ -117,13 +108,6 @@ export default function Hero() {
           {/* Ornamental frame background */}
           <div className="relative">
             <img src={playButtonBg} alt="" className="h-[80px] min-w-[350px] object-contain transition-transform group-hover:scale-105" />
-            {/* Blue glow overlay */}
-            <div className="absolute inset-0 rounded-sm opacity-60 group-hover:opacity-80 transition"
-              style={{
-                background: 'linear-gradient(180deg, rgba(80,140,255,0.15) 0%, rgba(40,100,220,0.25) 50%, rgba(80,140,255,0.15) 100%)',
-                boxShadow: '0 0 30px rgba(80,140,255,0.2), inset 0 0 20px rgba(80,140,255,0.1)',
-              }}
-            />
           </div>
           <span className="absolute gold-text text-[22px] font-['Cinzel',serif] uppercase tracking-[0.2em] drop-shadow-[0_0_8px_rgba(0,0,0,0.8)] whitespace-nowrap">
             PLAY NOW
