@@ -42,7 +42,6 @@ function GoldOrnamentLine({ className = '' }: { className?: string }) {
 
 function MemberCard({ member, size }: { member: TeamMember; size: 'lg' | 'md' }) {
   const frameSize = size === 'lg' ? 94 : 71;
-  const photoSize = size === 'lg' ? 76 : 57;
   const nameSize = size === 'lg' ? 25 : 17;
   const roleSize = size === 'lg' ? 16 : 11;
   const cardWidth = size === 'lg' ? 205 : 155;
