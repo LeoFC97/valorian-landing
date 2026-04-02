@@ -26,7 +26,7 @@ export default function Classes() {
   const [activeClass, setActiveClass] = useState('hunter');
 
   return (
-    <section className="relative w-full bg-black" style={{ aspectRatio: '1440 / 900' }}>
+    <section className="relative w-full bg-black overflow-hidden" style={{ aspectRatio: '1440 / 900', zIndex: 10 }}>
       {/* All class images stacked absolutely */}
       {classes.map(cls => (
         <img

@@ -18,12 +18,12 @@ function App() {
       <section id="gameplay">
         <Gameplay />
       </section>
-      <section id="classes">
+      <div id="classes">
         <Classes />
-      </section>
-      <section id="team">
+      </div>
+      <div id="team">
         <Team />
-      </section>
+      </div>
       <Footer />
     </div>
   )
