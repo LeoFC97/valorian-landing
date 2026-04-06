@@ -33,7 +33,7 @@ export default function Classes() {
           key={cls.id}
           src={cls.image}
           alt={cls.id}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 pointer-events-none"
           style={{ opacity: cls.id === activeClass ? 1 : 0 }}
         />
       ))}
