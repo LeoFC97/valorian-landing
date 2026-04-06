@@ -7,7 +7,7 @@ export default function Hero() {
 
       {/* Nav links overlay - positioned over the nav bar text in the image */}
       <div className="absolute top-[18%] left-1/2 -translate-x-1/2 flex gap-[1.8%]" style={{ width: '33%' }}>
-        {["home", "lore", "gameplay", "classes", "team", "founder"].map((id) => (
+        {["home", "lore", "gameplay", "classes", "team"].map((id) => (
           <a
             key={id}
             href={`#${id}`}

@@ -31,37 +31,38 @@ export default function Lore() {
         />
       ))}
 
-      {/* Left arrow button */}
+      {/* Left arrow — tall click zone on left edge */}
       <button
         type="button"
         onClick={prev}
-        className="absolute cursor-pointer hover:bg-white/5 transition rounded z-50"
-        style={{ left: '30.4%', top: '77.4%', width: '3.6%', height: '4.6%' }}
-        aria-label="Previous lore"
-      />
+        className="absolute left-0 top-[30%] h-[40%] w-[8%] z-50 cursor-pointer flex items-center justify-center group"
+      >
+        <span className="text-[2vw] text-[#c5944a] opacity-0 group-hover:opacity-80 transition-opacity select-none">&#10094;</span>
+      </button>
 
-      {/* Right arrow button */}
+      {/* Right arrow — tall click zone on right edge */}
       <button
         type="button"
         onClick={next}
-        className="absolute cursor-pointer hover:bg-white/5 transition rounded z-50"
-        style={{ left: '69.6%', top: '77.4%', width: '3.6%', height: '4.6%' }}
-        aria-label="Next lore"
-      />
-
-      {/* Dot navigation */}
-      <div
-        className="absolute z-50 flex items-center"
-        style={{ left: '47%', top: '86.5%', gap: '0.28%' }}
+        className="absolute right-0 top-[30%] h-[40%] w-[8%] z-50 cursor-pointer flex items-center justify-center group"
       >
+        <span className="text-[2vw] text-[#c5944a] opacity-0 group-hover:opacity-80 transition-opacity select-none">&#10095;</span>
+      </button>
+
+      {/* Dot indicators at bottom */}
+      <div className="absolute bottom-[3%] left-1/2 -translate-x-1/2 z-50 flex gap-[0.5vw]">
         {slides.map((_, i) => (
           <button
             key={i}
             type="button"
             onClick={() => setActive(i)}
-            className="cursor-pointer rounded-full z-50"
-            style={{ width: '0.4vw', height: '0.4vw' }}
-            aria-label={`Go to lore ${i + 1}`}
+            className="cursor-pointer rounded-full transition-all"
+            style={{
+              width: '0.5vw',
+              height: '0.5vw',
+              backgroundColor: i === active ? '#c5944a' : '#4a3a20',
+              boxShadow: i === active ? '0 0 6px rgba(197,148,74,0.6)' : 'none',
+            }}
           />
         ))}
       </div>

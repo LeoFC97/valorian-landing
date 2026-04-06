@@ -7,7 +7,7 @@ export default function Footer() {
 
       {/* Nav links overlay on right side of footer */}
       <div className="absolute top-[20%] right-[28%] flex flex-col gap-[8%]" style={{ width: '8%', height: '70%' }}>
-        {["home", "lore", "gameplay", "classes", "team", "founder"].map((id) => (
+        {["home", "lore", "gameplay", "classes", "team"].map((id) => (
           <a
             key={id}
             href={`#${id}`}
