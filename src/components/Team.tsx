@@ -1,20 +1,4 @@
-const leaders = [
-  { name: 'Matheus Sodre', role: 'CEO & Founder' },
-  { name: 'Jorge Sampaio', role: 'Creative Director' },
-];
-
 const members = [
-  { name: 'Roberto Vasco', role: 'Art Director' },
-  { name: 'Andre Luiz', role: 'Lead Developer' },
-  { name: 'Adelaide Silva', role: 'Game Designer' },
-  { name: 'Aguiar Nobrega', role: 'Administrator' },
-  { name: 'Patricia Dias', role: 'UI/UX Designer' },
-  { name: 'Julia Morais', role: 'Community Manager' },
-  { name: 'Cristian Por', role: 'Backend Developer' },
-  { name: 'Marcus Campos', role: 'Sound Designer' },
-];
-
-const membersRow3 = [
   { name: 'Marcos Vinícius', role: 'Artist' },
   { name: 'Marcelo Vinícius', role: 'Level Designer' },
   { name: 'Lázaro Renê', role: 'Programmer' },
@@ -80,30 +64,9 @@ export default function Team() {
           <div className="w-[8vw] h-[1px] bg-gradient-to-r from-transparent via-[#c5944a] to-transparent" />
         </div>
 
-        {/* Leaders row */}
-        <div className="flex justify-center gap-[6vw]" style={{ marginTop: '4%' }}>
-          {leaders.map(l => (
-            <MemberCard key={l.name} name={l.name} role={l.role} size="lg" />
-          ))}
-        </div>
-
-        {/* Row 1 */}
-        <div className="flex justify-center gap-[4vw]" style={{ marginTop: '3.5%' }}>
-          {members.slice(0, 4).map(m => (
-            <MemberCard key={m.name} name={m.name} role={m.role} />
-          ))}
-        </div>
-
-        {/* Row 2 */}
-        <div className="flex justify-center gap-[4vw]" style={{ marginTop: '3%' }}>
-          {members.slice(4).map(m => (
-            <MemberCard key={m.name} name={m.name} role={m.role} />
-          ))}
-        </div>
-
-        {/* Row 3 */}
-        <div className="flex justify-center gap-[4vw]" style={{ marginTop: '3%' }}>
-          {membersRow3.map(m => (
+        {/* Members */}
+        <div className="flex justify-center gap-[4vw]" style={{ marginTop: '4%' }}>
+          {members.map(m => (
             <MemberCard key={m.name} name={m.name} role={m.role} />
           ))}
         </div>
