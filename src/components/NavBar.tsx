@@ -23,10 +23,10 @@ export default function NavBar() {
         className="absolute z-[5]"
         style={{
           width: '85.8%',
-          height: '52%',
-          bottom: '12%',
+          height: '70.7%',
+          top: '7.4%',
           left: '7.1%',
-          background: 'rgba(0,7,11,0.8)',
+          background: 'rgba(0,7,11,0.92)',
         }}
       />
       {/* Actual nav links */}
