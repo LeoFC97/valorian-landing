@@ -103,96 +103,96 @@ export default function Lore() {
         />
       </div>
 
-      {/* Text box area */}
+      {/* Text box area with arrows on the sides */}
       <div
-        className="absolute left-1/2 -translate-x-1/2 z-10"
-        style={{ top: '66%', width: '34.2%' }}
+        className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center"
+        style={{ top: '66%', width: '48%', gap: '1.5vw' }}
       >
-        {/* Text box frame image */}
-        <div className="relative w-full">
-          <img
-            src={loreTextboxFrame}
-            alt=""
-            className="w-full h-auto pointer-events-none"
-          />
+        {/* Left arrow */}
+        <button
+          type="button"
+          onClick={prev}
+          className="cursor-pointer hover:scale-110 hover:brightness-125 active:scale-95 transition-all shrink-0"
+          style={{ width: '3.6vw' }}
+        >
+          <img src={loreArrowLeft} alt="Previous" className="w-full h-auto" />
+        </button>
 
-          {/* Title banner — pure CSS component */}
-          <div
-            className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center"
-            style={{
-              top: '-6%',
-              width: '70%',
-              height: '16%',
-              background: 'linear-gradient(180deg, rgba(15,12,8,0.95) 0%, rgba(10,8,5,0.98) 100%)',
-              border: '1px solid rgba(197,148,74,0.5)',
-              borderRadius: '2px',
-            }}
-          >
-            <div className="absolute top-0 left-[5%] right-[5%] h-px" style={{ background: 'linear-gradient(90deg, transparent, #c5944a, transparent)' }} />
-            <div className="absolute bottom-0 left-[5%] right-[5%] h-px" style={{ background: 'linear-gradient(90deg, transparent, #c5944a, transparent)' }} />
-            <span
-              className="text-[#d4c5a0]"
+        {/* Text box frame + content */}
+        <div className="relative flex-1 flex flex-col items-center">
+          <div className="relative w-full">
+            <img
+              src={loreTextboxFrame}
+              alt=""
+              className="w-full h-auto pointer-events-none"
+            />
+
+            {/* Title banner — pure CSS component */}
+            <div
+              className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center"
               style={{
-                fontFamily: "'Cinzel', serif",
-                fontSize: '1.1vw',
-                fontWeight: 400,
-                letterSpacing: '0.05em',
+                top: '-6%',
+                width: '70%',
+                height: '16%',
+                background: 'linear-gradient(180deg, rgba(15,12,8,0.95) 0%, rgba(10,8,5,0.98) 100%)',
+                border: '1px solid rgba(197,148,74,0.5)',
+                borderRadius: '2px',
               }}
             >
-              {slide.title}
-            </span>
-          </div>
-
-          {/* Body text overlaid inside frame */}
-          <div
-            className="absolute left-1/2 -translate-x-1/2"
-            style={{ top: '22%', width: '78%', height: '55%', overflow: 'hidden' }}
-          >
-            <p
-              className="text-[#edca87]"
-              style={{
-                fontFamily: "'Georgia', serif",
-                fontSize: '0.83vw',
-                lineHeight: 1.4,
-                textAlign: 'center',
-              }}
-            >
-              {slide.body}
-            </p>
-          </div>
-
-          {/* Scrollbar indicator (decorative) */}
-          <div
-            className="absolute"
-            style={{ right: '6%', top: '15%', width: '0.35vw', height: '60%' }}
-          >
-            <div className="w-full h-full rounded-full" style={{ background: 'rgba(11,18,21,0.8)', border: '1px solid rgba(253,191,8,0.3)' }}>
-              <div
-                className="w-full rounded-full transition-all"
+              <div className="absolute top-0 left-[5%] right-[5%] h-px" style={{ background: 'linear-gradient(90deg, transparent, #c5944a, transparent)' }} />
+              <div className="absolute bottom-0 left-[5%] right-[5%] h-px" style={{ background: 'linear-gradient(90deg, transparent, #c5944a, transparent)' }} />
+              <span
+                className="text-[#d4c5a0]"
                 style={{
-                  height: `${100 / slides.length}%`,
-                  marginTop: `${(active / (slides.length - 1)) * (100 - 100 / slides.length)}%`,
-                  background: 'linear-gradient(to bottom, #003053, #84680f)',
-                  border: '1px solid #84680f',
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: '1.1vw',
+                  fontWeight: 400,
+                  letterSpacing: '0.05em',
                 }}
-              />
+              >
+                {slide.title}
+              </span>
+            </div>
+
+            {/* Body text overlaid inside frame */}
+            <div
+              className="absolute left-1/2 -translate-x-1/2"
+              style={{ top: '22%', width: '78%', height: '55%', overflow: 'hidden' }}
+            >
+              <p
+                className="text-[#edca87]"
+                style={{
+                  fontFamily: "'Georgia', serif",
+                  fontSize: '0.83vw',
+                  lineHeight: 1.4,
+                  textAlign: 'center',
+                }}
+              >
+                {slide.body}
+              </p>
+            </div>
+
+            {/* Scrollbar indicator (decorative) */}
+            <div
+              className="absolute"
+              style={{ right: '6%', top: '15%', width: '0.35vw', height: '60%' }}
+            >
+              <div className="w-full h-full rounded-full" style={{ background: 'rgba(11,18,21,0.8)', border: '1px solid rgba(253,191,8,0.3)' }}>
+                <div
+                  className="w-full rounded-full transition-all"
+                  style={{
+                    height: `${100 / slides.length}%`,
+                    marginTop: `${(active / (slides.length - 1)) * (100 - 100 / slides.length)}%`,
+                    background: 'linear-gradient(to bottom, #003053, #84680f)',
+                    border: '1px solid #84680f',
+                  }}
+                />
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Arrow buttons below text box */}
-        <div className="relative flex items-center justify-between" style={{ marginTop: '-2%', paddingLeft: '5%', paddingRight: '5%' }}>
-          <button
-            type="button"
-            onClick={prev}
-            className="cursor-pointer hover:scale-110 hover:brightness-125 active:scale-95 transition-all"
-            style={{ width: '3.6vw' }}
-          >
-            <img src={loreArrowLeft} alt="Previous" className="w-full h-auto" />
-          </button>
-
-          {/* Diamond dot indicators */}
-          <div className="flex items-center" style={{ gap: '0.35vw' }}>
+          {/* Diamond dot indicators below text box */}
+          <div className="flex items-center" style={{ gap: '0.35vw', marginTop: '0.5vw' }}>
             {slides.map((_, i) => (
               <button
                 key={i}
@@ -213,16 +213,17 @@ export default function Lore() {
               </button>
             ))}
           </div>
-
-          <button
-            type="button"
-            onClick={next}
-            className="cursor-pointer hover:scale-110 hover:brightness-125 active:scale-95 transition-all"
-            style={{ width: '3.6vw' }}
-          >
-            <img src={loreArrowRight} alt="Next" className="w-full h-auto" />
-          </button>
         </div>
+
+        {/* Right arrow */}
+        <button
+          type="button"
+          onClick={next}
+          className="cursor-pointer hover:scale-110 hover:brightness-125 active:scale-95 transition-all shrink-0"
+          style={{ width: '3.6vw' }}
+        >
+          <img src={loreArrowRight} alt="Next" className="w-full h-auto" />
+        </button>
       </div>
     </section>
   );
