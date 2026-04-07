@@ -1,96 +1,229 @@
 import { useState } from 'react';
+import SectionTitle from './SectionTitle';
 
-import lore1 from '../assets/images/lore-1.png';
-import lore2 from '../assets/images/lore-2.png';
-import lore3 from '../assets/images/lore-3.png';
-import lore4 from '../assets/images/lore-4.png';
-import lore5 from '../assets/images/lore-5.png';
-import lore6 from '../assets/images/lore-6.png';
-import lore7 from '../assets/images/lore-7.png';
-import lore8 from '../assets/images/lore-8.png';
-import lore9 from '../assets/images/lore-9.png';
+import loreBg1 from '../assets/images/lore-bg-1.png';
+import loreBg2 from '../assets/images/lore-bg-2.png';
+import loreBg3 from '../assets/images/lore-bg-3.png';
+import loreBg4 from '../assets/images/lore-bg-4.png';
+import loreBg5 from '../assets/images/lore-bg-5.png';
+import loreBg6 from '../assets/images/lore-bg-6.png';
+import loreBg7 from '../assets/images/lore-bg-7.png';
+import loreBg8 from '../assets/images/lore-bg-8.png';
+import loreBg9 from '../assets/images/lore-bg-9.png';
 
-const slides = [lore1, lore2, lore3, lore4, lore5, lore6, lore7, lore8, lore9];
+import loreTextboxFrame from '../assets/images/lore-textbox-frame.png';
+import loreTitleBanner from '../assets/images/lore-title-banner.png';
+import loreArrowLeft from '../assets/images/lore-arrow-left.png';
+import loreArrowRight from '../assets/images/lore-arrow-right.png';
+import loreHeader from '../assets/images/lore-header.png';
+
+interface LoreSlide {
+  bg: string;
+  title: string;
+  body: string;
+}
+
+const slides: LoreSlide[] = [
+  {
+    bg: loreBg1,
+    title: 'O Princípio',
+    body: 'Antes que o tempo tivesse nome e o universo conhecesse forma, havia apenas o Vazio — e nele, solitário, vagava o Primeiro.\nDe sua vastidão silenciosa nasceu o desejo de criação. E com o eco desse desejo, o Primeiro moldou cinco entidades divinas:\nZalthor, Thyros, Vazrath, Myrnos e Yero — os Deuses Primevos, pilares do que viria a ser tudo o que é e o que permanece oculto.',
+  },
+  {
+    bg: loreBg2,
+    title: 'A Queda da Harmonia',
+    body: 'Mas então vieram os homens. Sob a proteção direta de Yero, os humanos prosperaram... e então corromperam. Insaciáveis e orgulhosos, ousaram profanar as obras divinas. Roubaram a matéria, queimaram florestas, escravizaram feras sagradas e tentaram replicar a magia dos deuses com alquimia e aço. A paz dos Primevos quebrou-se.',
+  },
+  {
+    bg: loreBg3,
+    title: 'O Surgimento do Império e do Pacto',
+    body: 'Sem orientação divina, os humanos ergueram o Império de Tyrvalor — fortificado por Casas Militares, sustentado por fé e comandado pela Santa Guarda Imperial. Durante séculos, dominaram o continente. Mas a ganância não ficou impune. Do abismo da criação surgiram os Elementais das Sombras: criaturas colossais forjadas da raiva dos Deuses e da corrupção da alma mortal.',
+  },
+  {
+    bg: loreBg4,
+    title: 'Thalgrim, o Sanguinário',
+    body: 'Senhor do sangue e da guerra.',
+  },
+  {
+    bg: loreBg5,
+    title: 'Vespera, a Sombra Eterna',
+    body: 'Deusa do medo e da ilusão.',
+  },
+  {
+    bg: loreBg6,
+    title: 'Noxis, o Pestilento',
+    body: 'Alquimista do veneno e da podridão.',
+  },
+  {
+    bg: loreBg7,
+    title: 'Kragath, o Indomável',
+    body: 'Fúria encarnada da destruição.',
+  },
+  {
+    bg: loreBg8,
+    title: 'A Fundação das Quatro Grandes Casas',
+    body: 'Com a união selada, o Império reorganizou sua estrutura militar. Surgiram então as Quatro Grandes Casas, centros de treinamento e doutrina espiritual — uma para cada tradição.',
+  },
+  {
+    bg: loreBg9,
+    title: 'Fendas na Aliança',
+    body: 'Nem todos aceitaram o pacto. Entre os undeads, divisões internas emergiram. Muitos servem ao Império. Mas outros — necromantes, lordes ossudos e cultistas antigos — abraçaram o Pacto, espalhando a morte nos campos de batalha. Elfos e sátiros, por enquanto, mantêm sua lealdade. Mas há rumores de clãs dissidentes que vivem nas sombras da floresta ou nos limites da civilização — observando, esperando.',
+  },
+];
 
 export default function Lore() {
   const [active, setActive] = useState(0);
+  const slide = slides[active];
 
   const prev = () => setActive(i => (i - 1 + slides.length) % slides.length);
   const next = () => setActive(i => (i + 1) % slides.length);
 
   return (
     <section className="relative w-full bg-black overflow-hidden" style={{ aspectRatio: '1440 / 1080' }}>
-      {/* All lore images stacked */}
-      {slides.map((src, i) => (
+      {/* Background art — clean, no UI baked in */}
+      {slides.map((s, i) => (
         <img
           key={i}
-          src={src}
-          alt={`Lore ${i + 1}`}
-          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 pointer-events-none"
-          style={{ opacity: i === active ? 1 : 0 }}
+          src={s.bg}
+          alt={s.title}
+          className="absolute w-full object-cover transition-opacity duration-500 pointer-events-none"
+          style={{ opacity: i === active ? 1 : 0, top: '15%', left: 0, height: '70%' }}
         />
       ))}
 
-      {/* Gold 4-pointed star navigation buttons — matches Figma arrow shape */}
-      <button
-        type="button"
-        onClick={prev}
-        className="absolute z-50 cursor-pointer group"
-        style={{ left: '30.3%', top: '76%', transform: 'translate(-50%, -50%)' }}
-        aria-label="Previous slide"
-      >
-        <svg viewBox="0 0 30 44" className="w-[1.8vw] h-[2.6vw] group-hover:scale-110 group-active:scale-95 transition-all" style={{ filter: 'drop-shadow(0 0 6px rgba(197,148,74,0.5))' }}>
-          <defs>
-            <linearGradient id="starGold" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#f0d070" />
-              <stop offset="40%" stopColor="#c5944a" />
-              <stop offset="100%" stopColor="#9a6e30" />
-            </linearGradient>
-          </defs>
-          <path d="M15 0 L19 16 L30 22 L19 28 L15 44 L11 28 L0 22 L11 16 Z" fill="url(#starGold)" />
-        </svg>
-      </button>
+      {/* Dark vignette for readability */}
+      <div className="absolute inset-0 pointer-events-none" style={{
+        background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 25%, transparent 60%, rgba(0,0,0,0.85) 80%, #000 100%)',
+      }} />
 
-      <button
-        type="button"
-        onClick={next}
-        className="absolute z-50 cursor-pointer group"
-        style={{ left: '69.7%', top: '76%', transform: 'translate(-50%, -50%)' }}
-        aria-label="Next slide"
-      >
-        <svg viewBox="0 0 30 44" className="w-[1.8vw] h-[2.6vw] group-hover:scale-110 group-active:scale-95 transition-all" style={{ filter: 'drop-shadow(0 0 6px rgba(197,148,74,0.5))' }}>
-          <path d="M15 0 L19 16 L30 22 L19 28 L15 44 L11 28 L0 22 L11 16 Z" fill="url(#starGold)" />
-        </svg>
-      </button>
-
-      {/* Diamond dot indicators */}
-      <div className="absolute z-50 left-1/2 -translate-x-1/2 flex items-center" style={{ top: '82%', gap: '0.4vw' }}>
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            type="button"
-            onClick={() => setActive(i)}
-            className="cursor-pointer transition-all hover:scale-125"
-            style={{ width: '1vw', height: '1vw' }}
-          >
-            <svg viewBox="0 0 16 16" className="w-full h-full">
-              <rect
-                x="3" y="3" width="10" height="10"
-                transform="rotate(45 8 8)"
-                fill={i === active ? '#c5944a' : '#5a4a30'}
-                stroke={i === active ? '#f0d080' : 'none'}
-                strokeWidth="0.5"
-              />
-            </svg>
-          </button>
-        ))}
+      {/* Section header with "Lore" title */}
+      <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ top: '4%' }}>
+        <div className="relative">
+          <img
+            src={loreHeader}
+            alt=""
+            className="pointer-events-none"
+            style={{ width: '73vw', height: 'auto' }}
+          />
+          {/* "LORE" text overlaying the header ornament */}
+          <div className="absolute inset-0 flex items-end justify-center" style={{ paddingBottom: '1%' }}>
+            <SectionTitle title="LORE" />
+          </div>
+        </div>
       </div>
 
-      {/* Slide counter */}
-      <div className="absolute top-[3%] right-[3%] z-50 bg-black/50 px-[1vw] py-[0.3vw] rounded-full">
-        <span className="text-[#c5944a] text-[0.9vw]" style={{ fontFamily: 'Cinzel, serif' }}>
-          {active + 1} / {slides.length}
-        </span>
+      {/* Text box area */}
+      <div
+        className="absolute left-1/2 -translate-x-1/2 z-10"
+        style={{ top: '66%', width: '34.2%' }}
+      >
+        {/* Text box frame image */}
+        <div className="relative w-full">
+          <img
+            src={loreTextboxFrame}
+            alt=""
+            className="w-full h-auto pointer-events-none"
+          />
+
+          {/* Title banner overlaid on top of frame */}
+          <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '-8%', width: '70%' }}>
+            <div className="relative">
+              <img src={loreTitleBanner} alt="" className="w-full h-auto pointer-events-none" />
+              <span
+                className="absolute inset-0 flex items-center justify-center text-[#d4c5a0]"
+                style={{
+                  fontFamily: "'Cinzel', serif",
+                  fontSize: '1.1vw',
+                  fontWeight: 400,
+                  letterSpacing: '0.05em',
+                  paddingBottom: '1%',
+                }}
+              >
+                {slide.title}
+              </span>
+            </div>
+          </div>
+
+          {/* Body text overlaid inside frame */}
+          <div
+            className="absolute left-1/2 -translate-x-1/2"
+            style={{ top: '22%', width: '78%', height: '55%', overflow: 'hidden' }}
+          >
+            <p
+              className="text-[#edca87]"
+              style={{
+                fontFamily: "'Georgia', serif",
+                fontSize: '0.83vw',
+                lineHeight: 1.4,
+                textAlign: 'center',
+              }}
+            >
+              {slide.body}
+            </p>
+          </div>
+
+          {/* Scrollbar indicator (decorative) */}
+          <div
+            className="absolute"
+            style={{ right: '6%', top: '15%', width: '0.35vw', height: '60%' }}
+          >
+            <div className="w-full h-full rounded-full" style={{ background: 'rgba(11,18,21,0.8)', border: '1px solid rgba(253,191,8,0.3)' }}>
+              <div
+                className="w-full rounded-full transition-all"
+                style={{
+                  height: `${100 / slides.length}%`,
+                  marginTop: `${(active / (slides.length - 1)) * (100 - 100 / slides.length)}%`,
+                  background: 'linear-gradient(to bottom, #003053, #84680f)',
+                  border: '1px solid #84680f',
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Arrow buttons below text box */}
+        <div className="relative flex items-center justify-between" style={{ marginTop: '-2%', paddingLeft: '5%', paddingRight: '5%' }}>
+          <button
+            type="button"
+            onClick={prev}
+            className="cursor-pointer hover:scale-110 hover:brightness-125 active:scale-95 transition-all"
+            style={{ width: '3.6vw' }}
+          >
+            <img src={loreArrowLeft} alt="Previous" className="w-full h-auto" />
+          </button>
+
+          {/* Diamond dot indicators */}
+          <div className="flex items-center" style={{ gap: '0.35vw' }}>
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                type="button"
+                onClick={() => setActive(i)}
+                className="cursor-pointer transition-all hover:scale-125"
+                style={{ width: '0.6vw', height: '0.6vw' }}
+              >
+                <svg viewBox="0 0 16 16" className="w-full h-full">
+                  <rect
+                    x="3" y="3" width="10" height="10"
+                    transform="rotate(45 8 8)"
+                    fill={i === active ? '#c5944a' : '#5a4a30'}
+                    stroke={i === active ? '#f0d080' : 'none'}
+                    strokeWidth="0.5"
+                  />
+                </svg>
+              </button>
+            ))}
+          </div>
+
+          <button
+            type="button"
+            onClick={next}
+            className="cursor-pointer hover:scale-110 hover:brightness-125 active:scale-95 transition-all"
+            style={{ width: '3.6vw' }}
+          >
+            <img src={loreArrowRight} alt="Next" className="w-full h-auto" />
+          </button>
+        </div>
       </div>
     </section>
   );
