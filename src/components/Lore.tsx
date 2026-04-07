@@ -31,70 +31,65 @@ export default function Lore() {
         />
       ))}
 
-      {/* Left arrow button */}
+      {/* Gold 4-pointed star navigation buttons */}
       <button
         type="button"
         onClick={prev}
-        className="absolute left-[2%] top-1/2 -translate-y-1/2 z-50 cursor-pointer
-          w-[3.5vw] h-[3.5vw] rounded-full
-          bg-black/50 border border-[#c5944a]/60
-          flex items-center justify-center
-          hover:bg-black/70 hover:border-[#c5944a] hover:scale-110
-          active:scale-95 transition-all"
+        className="absolute z-50 cursor-pointer group"
+        style={{ left: '30.3%', top: '75.5%', transform: 'translate(-50%, -50%)' }}
+        aria-label="Previous slide"
       >
-        <svg viewBox="0 0 24 24" fill="none" stroke="#c5944a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[1.5vw] h-[1.5vw]">
-          <polyline points="15 18 9 12 15 6" />
+        <svg viewBox="0 0 40 40" className="w-[3vw] h-[3vw] drop-shadow-[0_0_8px_rgba(197,148,74,0.6)] group-hover:drop-shadow-[0_0_14px_rgba(197,148,74,0.9)] group-hover:scale-110 group-active:scale-95 transition-all">
+          <defs>
+            <linearGradient id="starGoldL" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#e8c45a" />
+              <stop offset="50%" stopColor="#c5944a" />
+              <stop offset="100%" stopColor="#a07030" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L26 14 L38 20 L26 26 L20 38 L14 26 L2 20 L14 14 Z" fill="url(#starGoldL)" stroke="#f0d080" strokeWidth="0.5" />
         </svg>
       </button>
 
-      {/* Right arrow button */}
       <button
         type="button"
         onClick={next}
-        className="absolute right-[2%] top-1/2 -translate-y-1/2 z-50 cursor-pointer
-          w-[3.5vw] h-[3.5vw] rounded-full
-          bg-black/50 border border-[#c5944a]/60
-          flex items-center justify-center
-          hover:bg-black/70 hover:border-[#c5944a] hover:scale-110
-          active:scale-95 transition-all"
+        className="absolute z-50 cursor-pointer group"
+        style={{ left: '69.7%', top: '75.5%', transform: 'translate(-50%, -50%)' }}
+        aria-label="Next slide"
       >
-        <svg viewBox="0 0 24 24" fill="none" stroke="#c5944a" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-[1.5vw] h-[1.5vw]">
-          <polyline points="9 6 15 12 9 18" />
+        <svg viewBox="0 0 40 40" className="w-[3vw] h-[3vw] drop-shadow-[0_0_8px_rgba(197,148,74,0.6)] group-hover:drop-shadow-[0_0_14px_rgba(197,148,74,0.9)] group-hover:scale-110 group-active:scale-95 transition-all">
+          <defs>
+            <linearGradient id="starGoldR" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#e8c45a" />
+              <stop offset="50%" stopColor="#c5944a" />
+              <stop offset="100%" stopColor="#a07030" />
+            </linearGradient>
+          </defs>
+          <path d="M20 2 L26 14 L38 20 L26 26 L20 38 L14 26 L2 20 L14 14 Z" fill="url(#starGoldR)" stroke="#f0d080" strokeWidth="0.5" />
         </svg>
       </button>
 
-      {/* Yellow arrow click targets (over baked-in arrows in image) */}
-      <button
-        type="button"
-        onClick={prev}
-        className="absolute z-50 cursor-pointer hover:brightness-125 transition-all"
-        style={{ left: '30.3%', top: '77.3%', width: '3.6%', height: '4.7%' }}
-        aria-label="Previous (yellow arrow)"
-      />
-      <button
-        type="button"
-        onClick={next}
-        className="absolute z-50 cursor-pointer hover:brightness-125 transition-all"
-        style={{ left: '69.5%', top: '77.3%', width: '3.6%', height: '4.7%' }}
-        aria-label="Next (yellow arrow)"
-      />
-
-      {/* Dot indicators */}
-      <div className="absolute bottom-[4%] left-1/2 -translate-x-1/2 z-50 flex gap-[0.8vw] bg-black/40 px-[1.2vw] py-[0.6vw] rounded-full">
+      {/* Diamond dot indicators */}
+      <div className="absolute z-50 left-1/2 -translate-x-1/2 flex items-center" style={{ top: '82%', gap: '0.4vw' }}>
         {slides.map((_, i) => (
           <button
             key={i}
             type="button"
             onClick={() => setActive(i)}
-            className="cursor-pointer rounded-full transition-all hover:scale-125"
-            style={{
-              width: '0.7vw',
-              height: '0.7vw',
-              backgroundColor: i === active ? '#c5944a' : '#5a4a30',
-              boxShadow: i === active ? '0 0 8px rgba(197,148,74,0.7)' : 'none',
-              transform: i === active ? 'scale(1.3)' : undefined,
-            }}
-          />
+            className="cursor-pointer transition-all hover:scale-125"
+            style={{ width: '1vw', height: '1vw' }}
+          >
+            <svg viewBox="0 0 16 16" className="w-full h-full">
+              <rect
+                x="3" y="3" width="10" height="10"
+                transform="rotate(45 8 8)"
+                fill={i === active ? '#c5944a' : '#5a4a30'}
+                stroke={i === active ? '#f0d080' : 'none'}
+                strokeWidth="0.5"
+              />
+            </svg>
+          </button>
         ))}
       </div>
 
