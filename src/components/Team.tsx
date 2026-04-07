@@ -14,6 +14,14 @@ const members = [
   { name: 'Marcus Campos', role: 'Sound Designer' },
 ];
 
+const membersRow3 = [
+  { name: 'Marcos Vinícius', role: 'Artist' },
+  { name: 'Marcelo Vinícius', role: 'Level Designer' },
+  { name: 'Lázaro Renê', role: 'Programmer' },
+  { name: 'Benjamin Borges', role: 'Game Designer' },
+  { name: 'Natan Ganum', role: 'Streamer / Marketing' },
+];
+
 function Avatar({ size, name }: { size: 'lg' | 'sm'; name: string }) {
   const px = size === 'lg' ? 'w-[7vw] h-[7vw]' : 'w-[5vw] h-[5vw]';
   const initials = name.split(' ').map(w => w[0]).join('');
@@ -89,6 +97,13 @@ export default function Team() {
         {/* Row 2 */}
         <div className="flex justify-center gap-[4vw]" style={{ marginTop: '3%' }}>
           {members.slice(4).map(m => (
+            <MemberCard key={m.name} name={m.name} role={m.role} />
+          ))}
+        </div>
+
+        {/* Row 3 */}
+        <div className="flex justify-center gap-[4vw]" style={{ marginTop: '3%' }}>
+          {membersRow3.map(m => (
             <MemberCard key={m.name} name={m.name} role={m.role} />
           ))}
         </div>
