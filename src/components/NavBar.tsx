@@ -18,6 +18,17 @@ export default function NavBar() {
         alt=""
         className="absolute inset-0 w-full h-full object-contain pointer-events-none"
       />
+      {/* Dark background behind text — Figma Vector 2 (#00070bcc) */}
+      <div
+        className="absolute z-[5]"
+        style={{
+          width: '85.8%',
+          height: '52%',
+          bottom: '12%',
+          left: '7.1%',
+          background: 'rgba(0,7,11,0.8)',
+        }}
+      />
       {/* Actual nav links */}
       <div className="relative z-10 flex items-center" style={{ gap: '2.5vw' }}>
         {navLinks.map(link => (
