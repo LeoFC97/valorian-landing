@@ -26,7 +26,7 @@ export default function NavBar() {
           height: '70.7%',
           top: '7.4%',
           left: '7.1%',
-          background: 'rgba(0,7,11,0.92)',
+          background: 'rgba(0,7,11,0.8)',
         }}
       />
       {/* Actual nav links */}
