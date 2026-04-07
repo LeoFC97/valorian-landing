@@ -58,8 +58,8 @@ export default function Hero() {
             </span>
           </a>
 
-          {/* Separator line — white stroke like Figma */}
-          <div style={{ width: '1.4vw', height: '1px', background: 'rgba(255,255,255,0.5)' }} />
+          {/* Vertical separator — white stroke like Figma */}
+          <div style={{ width: '1px', height: '1.4vw', background: 'rgba(255,255,255,0.6)' }} />
 
           {/* CREATE ACCOUNT */}
           <a
@@ -72,15 +72,15 @@ export default function Hero() {
                 fontSize: '1.1vw',
                 fontWeight: 500,
                 letterSpacing: '0.02em',
-                color: '#d4c5a0',
+                color: '#ffffff',
               }}
             >
               CREATE ACCOUNT
             </span>
           </a>
 
-          {/* Separator line */}
-          <div style={{ width: '1.4vw', height: '1px', background: 'rgba(255,255,255,0.5)' }} />
+          {/* Vertical separator */}
+          <div style={{ width: '1px', height: '1.4vw', background: 'rgba(255,255,255,0.6)' }} />
 
           {/* Language selector — Brazil flag from Figma + dropdown */}
           <div className="flex items-center cursor-pointer hover:brightness-125 transition-all" style={{ gap: '0.3vw' }}>
@@ -113,13 +113,13 @@ export default function Hero() {
         style={{ top: '42.5%', width: '44.9%', height: '6.9%' }}
       >
         <span
-          className="gold-title"
           style={{
             fontFamily: "'Cinzel', serif",
             fontSize: '2.4vw',
             fontWeight: 400,
             letterSpacing: '0.08em',
             whiteSpace: 'nowrap',
+            color: '#ffffff',
             textShadow: '0 0 30px rgba(197,148,74,0.4)',
           }}
         >

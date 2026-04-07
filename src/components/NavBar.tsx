@@ -6,6 +6,7 @@ const navLinks = [
   { label: 'Gameplay', href: '#gameplay' },
   { label: 'Classes', href: '#classes' },
   { label: 'Team', href: '#team' },
+  { label: 'Founder', href: '#founder' },
 ];
 
 export default function NavBar() {
@@ -23,7 +24,7 @@ export default function NavBar() {
           <a
             key={link.label}
             href={link.href}
-            className="text-[#d4c5a0] hover:text-white transition-colors"
+            className="text-white hover:text-[#f0d080] transition-colors"
             style={{
               fontFamily: "'Cinzel', serif",
               fontSize: '1.18vw',
