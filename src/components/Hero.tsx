@@ -3,6 +3,8 @@ import heroPaladin from '../assets/images/hero-paladin-new.png';
 import logoWithOrnament from '../assets/images/logo-with-ornament.png';
 import playNowFrame from '../assets/images/play-now-frame.png';
 import timelineNew from '../assets/images/timeline-new.png';
+import iconKnightGold from '../assets/images/icon-knight-gold.png';
+import flagBrazil from '../assets/images/flag-brazil.png';
 import NavBar from './NavBar';
 
 export default function Hero() {
@@ -23,34 +25,74 @@ export default function Hero() {
         style={{ right: '0%', top: '42%', width: '53.5%', height: 'auto' }}
       />
 
-      {/* Top bar */}
+      {/* Top bar — matches Figma Frame 71 (1440×64, padding 20/50) */}
       <div
-        className="absolute top-0 left-0 w-full flex items-center justify-end"
-        style={{ height: '6.3%', paddingRight: '3.5%' }}
+        className="absolute top-0 left-0 w-full z-50 flex items-center justify-end"
+        style={{ height: '4.4%', paddingRight: '3.5%', paddingTop: '1.4%' }}
       >
         <div className="flex items-center" style={{ gap: '1vw' }}>
+          {/* SIGN IN — knight icon + Goldeen gradient text */}
           <a
             href="#signin"
-            className="text-[#d4c5a0] hover:text-white transition-colors flex items-center"
-            style={{ fontFamily: "'Cinzel', serif", fontSize: '1.1vw', gap: '0.5vw' }}
+            className="flex items-center hover:brightness-125 transition-all"
+            style={{ gap: '0.7vw' }}
           >
-            <svg viewBox="0 0 20 20" fill="currentColor" className="w-[1.2vw] h-[1.2vw] text-[#c5944a]">
-              <path d="M10 2a4 4 0 100 8 4 4 0 000-8zM3 18a7 7 0 0114 0H3z" />
-            </svg>
-            SIGN IN
+            <img
+              src={iconKnightGold}
+              alt=""
+              className="pointer-events-none"
+              style={{ width: '1.4vw', height: '1.4vw' }}
+            />
+            <span
+              style={{
+                fontFamily: "'Georgia', serif",
+                fontSize: '1.1vw',
+                fontWeight: 500,
+                letterSpacing: '0.02em',
+                background: 'linear-gradient(to bottom, #f7f7f7, #d2cd87)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+              }}
+            >
+              SIGN IN
+            </span>
           </a>
-          <span className="text-[#d4c5a070]" style={{ fontSize: '1vw' }}>|</span>
+
+          {/* Separator line — white stroke like Figma */}
+          <div style={{ width: '1.4vw', height: '1px', background: 'rgba(255,255,255,0.5)' }} />
+
+          {/* CREATE ACCOUNT */}
           <a
             href="#create"
-            className="text-[#8a7b5a] hover:text-white transition-colors"
-            style={{ fontFamily: "'Cinzel', serif", fontSize: '1.1vw' }}
+            className="hover:brightness-125 transition-all"
           >
-            CREATE ACCOUNT
+            <span
+              style={{
+                fontFamily: "'Georgia', serif",
+                fontSize: '1.1vw',
+                fontWeight: 500,
+                letterSpacing: '0.02em',
+                color: '#d4c5a0',
+              }}
+            >
+              CREATE ACCOUNT
+            </span>
           </a>
-          <span className="text-[#d4c5a070]" style={{ fontSize: '1vw' }}>|</span>
-          <div className="flex items-center" style={{ gap: '0.3vw' }}>
-            <span style={{ fontSize: '1.2vw' }}>🇧🇷</span>
-            <span className="text-[#e4e2bf]" style={{ fontSize: '0.7vw' }}>▼</span>
+
+          {/* Separator line */}
+          <div style={{ width: '1.4vw', height: '1px', background: 'rgba(255,255,255,0.5)' }} />
+
+          {/* Language selector — Brazil flag from Figma + dropdown */}
+          <div className="flex items-center cursor-pointer hover:brightness-125 transition-all" style={{ gap: '0.3vw' }}>
+            <img
+              src={flagBrazil}
+              alt="Português"
+              className="pointer-events-none"
+              style={{ width: '1.7vw', height: '1.7vw', borderRadius: '2px' }}
+            />
+            <svg viewBox="0 0 13 13" style={{ width: '0.6vw', height: '0.6vw' }}>
+              <polygon points="6.5,13 0,0 13,0" fill="#e4e2bf" />
+            </svg>
           </div>
         </div>
       </div>
