@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import SectionTitle from './SectionTitle';
-
 import loreBg1 from '../assets/images/lore-bg-1.png';
 import loreBg2 from '../assets/images/lore-bg-2.png';
 import loreBg3 from '../assets/images/lore-bg-3.png';
@@ -12,7 +10,6 @@ import loreBg8 from '../assets/images/lore-bg-8.png';
 import loreBg9 from '../assets/images/lore-bg-9.png';
 
 import loreTextboxFrame from '../assets/images/lore-textbox-frame.png';
-import loreTitleBanner from '../assets/images/lore-title-banner.png';
 import loreArrowLeft from '../assets/images/lore-arrow-left.png';
 import loreArrowRight from '../assets/images/lore-arrow-right.png';
 import loreHeader from '../assets/images/lore-header.png';
@@ -96,20 +93,14 @@ export default function Lore() {
         background: 'linear-gradient(to bottom, rgba(0,0,0,0.8) 0%, transparent 25%, transparent 60%, rgba(0,0,0,0.85) 80%, #000 100%)',
       }} />
 
-      {/* Section header with "Lore" title */}
+      {/* Section header — decorative image with hooded figure + "Lore" */}
       <div className="absolute left-1/2 -translate-x-1/2 z-10" style={{ top: '4%' }}>
-        <div className="relative">
-          <img
-            src={loreHeader}
-            alt=""
-            className="pointer-events-none"
-            style={{ width: '73vw', height: 'auto' }}
-          />
-          {/* "LORE" text overlaying the header ornament */}
-          <div className="absolute inset-0 flex items-end justify-center" style={{ paddingBottom: '1%' }}>
-            <SectionTitle title="LORE" />
-          </div>
-        </div>
+        <img
+          src={loreHeader}
+          alt="Lore"
+          className="pointer-events-none"
+          style={{ width: '73vw', height: 'auto' }}
+        />
       </div>
 
       {/* Text box area */}
@@ -125,23 +116,31 @@ export default function Lore() {
             className="w-full h-auto pointer-events-none"
           />
 
-          {/* Title banner overlaid on top of frame */}
-          <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '-8%', width: '70%' }}>
-            <div className="relative">
-              <img src={loreTitleBanner} alt="" className="w-full h-auto pointer-events-none" />
-              <span
-                className="absolute inset-0 flex items-center justify-center text-[#d4c5a0]"
-                style={{
-                  fontFamily: "'Cinzel', serif",
-                  fontSize: '1.1vw',
-                  fontWeight: 400,
-                  letterSpacing: '0.05em',
-                  paddingBottom: '1%',
-                }}
-              >
-                {slide.title}
-              </span>
-            </div>
+          {/* Title banner — pure CSS component */}
+          <div
+            className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center"
+            style={{
+              top: '-6%',
+              width: '70%',
+              height: '16%',
+              background: 'linear-gradient(180deg, rgba(15,12,8,0.95) 0%, rgba(10,8,5,0.98) 100%)',
+              border: '1px solid rgba(197,148,74,0.5)',
+              borderRadius: '2px',
+            }}
+          >
+            <div className="absolute top-0 left-[5%] right-[5%] h-px" style={{ background: 'linear-gradient(90deg, transparent, #c5944a, transparent)' }} />
+            <div className="absolute bottom-0 left-[5%] right-[5%] h-px" style={{ background: 'linear-gradient(90deg, transparent, #c5944a, transparent)' }} />
+            <span
+              className="text-[#d4c5a0]"
+              style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: '1.1vw',
+                fontWeight: 400,
+                letterSpacing: '0.05em',
+              }}
+            >
+              {slide.title}
+            </span>
           </div>
 
           {/* Body text overlaid inside frame */}

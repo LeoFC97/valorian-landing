@@ -1,8 +1,6 @@
 import heroCityBg from '../assets/images/hero-city-bg.png';
 import heroPaladin from '../assets/images/hero-paladin-new.png';
 import logoWithOrnament from '../assets/images/logo-with-ornament.png';
-import playNowBtn from '../assets/images/play-now-btn-new.png';
-import playDemoFrame from '../assets/images/play-demo-frame.png';
 import timelineBar from '../assets/images/timeline-bar.png';
 import NavBar from './NavBar';
 
@@ -71,22 +69,64 @@ export default function Hero() {
         <NavBar />
       </div>
 
-      {/* Play Demo Banner */}
-      <div className="absolute" style={{ left: '27.6%', top: '42.5%', width: '44.9%' }}>
-        <img src={playDemoFrame} alt="Play Demo 15/02, Join us!" className="w-full h-auto" />
+      {/* Play Demo Banner — componentized */}
+      <div
+        className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center"
+        style={{ top: '42.5%', width: '44.9%', height: '6.9%' }}
+      >
+        <div
+          className="w-full h-full flex items-center justify-center"
+          style={{
+            background: 'linear-gradient(90deg, transparent 0%, rgba(10,6,2,0.85) 15%, rgba(10,6,2,0.9) 50%, rgba(10,6,2,0.85) 85%, transparent 100%)',
+            borderTop: '1px solid rgba(197,148,74,0.4)',
+            borderBottom: '1px solid rgba(197,148,74,0.4)',
+          }}
+        >
+          <span
+            className="gold-title"
+            style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: '2.4vw',
+              fontWeight: 400,
+              letterSpacing: '0.08em',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            PLAY DEMO 15/02, Join us!
+          </span>
+        </div>
       </div>
 
-      {/* Play Now Button */}
+      {/* Play Now Button — componentized */}
       <a
         href="#play"
-        className="absolute group"
-        style={{ left: '33.7%', top: '53.7%', width: '32.6%' }}
+        className="absolute left-1/2 -translate-x-1/2 group flex items-center justify-center"
+        style={{ top: '53.7%', width: '32.6%', height: '10%' }}
       >
-        <img
-          src={playNowBtn}
-          alt="Play Now"
-          className="w-full h-auto group-hover:brightness-125 transition-all"
-        />
+        <div
+          className="w-full h-full flex items-center justify-center group-hover:brightness-125 transition-all"
+          style={{
+            background: 'linear-gradient(180deg, #2a1f0a 0%, #1a1408 40%, #0d0b06 100%)',
+            border: '2px solid #c5944a',
+            borderRadius: '6px',
+            boxShadow: '0 0 20px rgba(197,148,74,0.3), inset 0 1px 0 rgba(255,220,120,0.15)',
+          }}
+        >
+          {/* Decorative corners */}
+          <div className="absolute top-[-1px] left-[10%] right-[10%] h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, #e5b723, transparent)' }} />
+          <div className="absolute bottom-[-1px] left-[10%] right-[10%] h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, #e5b723, transparent)' }} />
+          <span
+            className="gold-title"
+            style={{
+              fontFamily: "'Cinzel', serif",
+              fontSize: '1.8vw',
+              fontWeight: 600,
+              letterSpacing: '0.15em',
+            }}
+          >
+            PLAY NOW
+          </span>
+        </div>
       </a>
 
       {/* Timeline */}
