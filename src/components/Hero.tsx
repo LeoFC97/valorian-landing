@@ -73,45 +73,20 @@ export default function Hero() {
 
       {/* Play Demo Banner */}
       <div className="absolute" style={{ left: '27.6%', top: '42.5%', width: '44.9%' }}>
-        <div className="relative flex items-center justify-center" style={{ height: '6.9%' }}>
-          <img src={playDemoFrame} alt="" className="absolute inset-0 w-full h-full object-contain pointer-events-none" />
-          <p
-            className="relative z-10 gold-text"
-            style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: '2.4vw',
-              fontWeight: 400,
-              letterSpacing: '0.03em',
-            }}
-          >
-            PLAY DEMO 15/02, Join us!
-          </p>
-        </div>
+        <img src={playDemoFrame} alt="Play Demo 15/02, Join us!" className="w-full h-auto" />
       </div>
 
       {/* Play Now Button */}
       <a
         href="#play"
-        className="absolute flex items-center justify-center group"
+        className="absolute group"
         style={{ left: '33.7%', top: '53.7%', width: '32.6%' }}
       >
         <img
           src={playNowBtn}
-          alt=""
+          alt="Play Now"
           className="w-full h-auto group-hover:brightness-125 transition-all"
         />
-        <span
-          className="absolute z-10 text-white"
-          style={{
-            fontFamily: "'Cinzel', serif",
-            fontSize: '1.8vw',
-            fontWeight: 500,
-            letterSpacing: '0.1em',
-            textShadow: '0 2px 8px rgba(0,0,0,0.5)',
-          }}
-        >
-          PLAY NOW
-        </span>
       </a>
 
       {/* Timeline */}
