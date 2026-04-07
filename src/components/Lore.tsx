@@ -63,6 +63,22 @@ export default function Lore() {
         </svg>
       </button>
 
+      {/* Yellow arrow click targets (over baked-in arrows in image) */}
+      <button
+        type="button"
+        onClick={prev}
+        className="absolute z-50 cursor-pointer hover:brightness-125 transition-all"
+        style={{ left: '30.3%', top: '77.3%', width: '3.6%', height: '4.7%' }}
+        aria-label="Previous (yellow arrow)"
+      />
+      <button
+        type="button"
+        onClick={next}
+        className="absolute z-50 cursor-pointer hover:brightness-125 transition-all"
+        style={{ left: '69.5%', top: '77.3%', width: '3.6%', height: '4.7%' }}
+        aria-label="Next (yellow arrow)"
+      />
+
       {/* Dot indicators */}
       <div className="absolute bottom-[4%] left-1/2 -translate-x-1/2 z-50 flex gap-[0.8vw] bg-black/40 px-[1.2vw] py-[0.6vw] rounded-full">
         {slides.map((_, i) => (
