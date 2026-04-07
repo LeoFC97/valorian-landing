@@ -31,23 +31,23 @@ export default function Lore() {
         />
       ))}
 
-      {/* Gold 4-pointed star navigation buttons */}
+      {/* Gold 4-pointed star navigation buttons — matches Figma arrow shape */}
       <button
         type="button"
         onClick={prev}
         className="absolute z-50 cursor-pointer group"
-        style={{ left: '30.3%', top: '75.5%', transform: 'translate(-50%, -50%)' }}
+        style={{ left: '30.3%', top: '76%', transform: 'translate(-50%, -50%)' }}
         aria-label="Previous slide"
       >
-        <svg viewBox="0 0 40 40" className="w-[3vw] h-[3vw] drop-shadow-[0_0_8px_rgba(197,148,74,0.6)] group-hover:drop-shadow-[0_0_14px_rgba(197,148,74,0.9)] group-hover:scale-110 group-active:scale-95 transition-all">
+        <svg viewBox="0 0 30 44" className="w-[1.8vw] h-[2.6vw] group-hover:scale-110 group-active:scale-95 transition-all" style={{ filter: 'drop-shadow(0 0 6px rgba(197,148,74,0.5))' }}>
           <defs>
-            <linearGradient id="starGoldL" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#e8c45a" />
-              <stop offset="50%" stopColor="#c5944a" />
-              <stop offset="100%" stopColor="#a07030" />
+            <linearGradient id="starGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f0d070" />
+              <stop offset="40%" stopColor="#c5944a" />
+              <stop offset="100%" stopColor="#9a6e30" />
             </linearGradient>
           </defs>
-          <path d="M20 2 L26 14 L38 20 L26 26 L20 38 L14 26 L2 20 L14 14 Z" fill="url(#starGoldL)" stroke="#f0d080" strokeWidth="0.5" />
+          <path d="M15 0 L19 16 L30 22 L19 28 L15 44 L11 28 L0 22 L11 16 Z" fill="url(#starGold)" />
         </svg>
       </button>
 
@@ -55,18 +55,11 @@ export default function Lore() {
         type="button"
         onClick={next}
         className="absolute z-50 cursor-pointer group"
-        style={{ left: '69.7%', top: '75.5%', transform: 'translate(-50%, -50%)' }}
+        style={{ left: '69.7%', top: '76%', transform: 'translate(-50%, -50%)' }}
         aria-label="Next slide"
       >
-        <svg viewBox="0 0 40 40" className="w-[3vw] h-[3vw] drop-shadow-[0_0_8px_rgba(197,148,74,0.6)] group-hover:drop-shadow-[0_0_14px_rgba(197,148,74,0.9)] group-hover:scale-110 group-active:scale-95 transition-all">
-          <defs>
-            <linearGradient id="starGoldR" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#e8c45a" />
-              <stop offset="50%" stopColor="#c5944a" />
-              <stop offset="100%" stopColor="#a07030" />
-            </linearGradient>
-          </defs>
-          <path d="M20 2 L26 14 L38 20 L26 26 L20 38 L14 26 L2 20 L14 14 Z" fill="url(#starGoldR)" stroke="#f0d080" strokeWidth="0.5" />
+        <svg viewBox="0 0 30 44" className="w-[1.8vw] h-[2.6vw] group-hover:scale-110 group-active:scale-95 transition-all" style={{ filter: 'drop-shadow(0 0 6px rgba(197,148,74,0.5))' }}>
+          <path d="M15 0 L19 16 L30 22 L19 28 L15 44 L11 28 L0 22 L11 16 Z" fill="url(#starGold)" />
         </svg>
       </button>
 
