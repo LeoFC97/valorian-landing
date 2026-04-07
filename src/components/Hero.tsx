@@ -1,7 +1,8 @@
 import heroCityBg from '../assets/images/hero-city-bg.png';
 import heroPaladin from '../assets/images/hero-paladin-new.png';
 import logoWithOrnament from '../assets/images/logo-with-ornament.png';
-import timelineBar from '../assets/images/timeline-bar.png';
+import playNowFrame from '../assets/images/play-now-frame.png';
+import timelineNew from '../assets/images/timeline-new.png';
 import NavBar from './NavBar';
 
 export default function Hero() {
@@ -19,12 +20,7 @@ export default function Hero() {
         src={heroPaladin}
         alt="Paladin"
         className="absolute pointer-events-none"
-        style={{
-          right: '0%',
-          top: '42%',
-          width: '53.5%',
-          height: 'auto',
-        }}
+        style={{ right: '0%', top: '42%', width: '53.5%', height: 'auto' }}
       />
 
       {/* Top bar */}
@@ -69,59 +65,46 @@ export default function Hero() {
         <NavBar />
       </div>
 
-      {/* Play Demo Banner — componentized */}
+      {/* Play Demo Banner — gold text with subtle glow lines */}
       <div
         className="absolute left-1/2 -translate-x-1/2 flex items-center justify-center"
         style={{ top: '42.5%', width: '44.9%', height: '6.9%' }}
       >
-        <div
-          className="w-full h-full flex items-center justify-center"
+        <span
+          className="gold-title"
           style={{
-            background: 'linear-gradient(90deg, transparent 0%, rgba(10,6,2,0.85) 15%, rgba(10,6,2,0.9) 50%, rgba(10,6,2,0.85) 85%, transparent 100%)',
-            borderTop: '1px solid rgba(197,148,74,0.4)',
-            borderBottom: '1px solid rgba(197,148,74,0.4)',
+            fontFamily: "'Cinzel', serif",
+            fontSize: '2.4vw',
+            fontWeight: 400,
+            letterSpacing: '0.08em',
+            whiteSpace: 'nowrap',
+            textShadow: '0 0 30px rgba(197,148,74,0.4)',
           }}
         >
-          <span
-            className="gold-title"
-            style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: '2.4vw',
-              fontWeight: 400,
-              letterSpacing: '0.08em',
-              whiteSpace: 'nowrap',
-            }}
-          >
-            PLAY DEMO 15/02, Join us!
-          </span>
-        </div>
+          PLAY DEMO 15/02, Join us!
+        </span>
       </div>
 
-      {/* Play Now Button — componentized */}
+      {/* Play Now Button — Figma ornate frame + real text */}
       <a
         href="#play"
-        className="absolute left-1/2 -translate-x-1/2 group flex items-center justify-center"
-        style={{ top: '53.7%', width: '32.6%', height: '10%' }}
+        className="absolute left-1/2 -translate-x-1/2 group"
+        style={{ top: '53.7%', width: '32.6%' }}
       >
-        <div
-          className="w-full h-full flex items-center justify-center group-hover:brightness-125 transition-all"
-          style={{
-            background: 'linear-gradient(180deg, #2a1f0a 0%, #1a1408 40%, #0d0b06 100%)',
-            border: '2px solid #c5944a',
-            borderRadius: '6px',
-            boxShadow: '0 0 20px rgba(197,148,74,0.3), inset 0 1px 0 rgba(255,220,120,0.15)',
-          }}
-        >
-          {/* Decorative corners */}
-          <div className="absolute top-[-1px] left-[10%] right-[10%] h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, #e5b723, transparent)' }} />
-          <div className="absolute bottom-[-1px] left-[10%] right-[10%] h-[2px]" style={{ background: 'linear-gradient(90deg, transparent, #e5b723, transparent)' }} />
+        <div className="relative flex items-center justify-center group-hover:brightness-125 group-active:scale-[0.98] transition-all">
+          <img
+            src={playNowFrame}
+            alt=""
+            className="w-full h-auto pointer-events-none"
+          />
           <span
-            className="gold-title"
+            className="absolute text-white"
             style={{
               fontFamily: "'Cinzel', serif",
               fontSize: '1.8vw',
-              fontWeight: 600,
+              fontWeight: 500,
               letterSpacing: '0.15em',
+              textShadow: '0 0 10px rgba(100,180,255,0.4)',
             }}
           >
             PLAY NOW
@@ -129,22 +112,22 @@ export default function Hero() {
         </div>
       </a>
 
-      {/* Timeline */}
-      <div className="absolute" style={{ left: '32.5%', top: '77%', width: '35%' }}>
-        <img src={timelineBar} alt="" className="w-full h-auto pointer-events-none" />
-        {/* Phase labels overlaid on timeline */}
-        <div className="absolute inset-0 flex items-start justify-between" style={{ paddingTop: '2%', paddingLeft: '3%', paddingRight: '3%' }}>
-          <div className="flex flex-col items-center">
-            <span className="text-[#d4c5a0]" style={{ fontFamily: "'Cinzel', serif", fontSize: '1.2vw', fontWeight: 600 }}>Phase 1</span>
-            <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.8vw' }}>2026/1</span>
+      {/* Timeline — Figma asset + real text labels */}
+      <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '77%', width: '35%' }}>
+        <img src={timelineNew} alt="" className="w-full h-auto pointer-events-none" />
+        {/* Phase labels positioned above timeline markers */}
+        <div className="absolute inset-0 flex items-start justify-between" style={{ paddingLeft: '2%', paddingRight: '0%' }}>
+          <div className="flex flex-col items-center" style={{ width: '18%' }}>
+            <span className="text-[#d4c5a0]" style={{ fontFamily: "'Cinzel', serif", fontSize: '1.1vw', fontWeight: 600 }}>Phase 1</span>
+            <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.7vw' }}>2026/1</span>
           </div>
-          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.7vw', marginTop: '3%' }}>Phase 2</span>
-          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.7vw', marginTop: '3%' }}>Phase 3</span>
-          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.7vw', marginTop: '3%' }}>Phase 4</span>
-          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.7vw', marginTop: '3%' }}>Beta</span>
-          <div className="flex flex-col items-center">
-            <span className="text-[#d4c5a0]" style={{ fontFamily: "'Cinzel', serif", fontSize: '1vw', fontWeight: 600 }}>LAUNCH</span>
-            <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.8vw' }}>2027/2</span>
+          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw', marginTop: '2%' }}>Phase 2</span>
+          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw', marginTop: '2%' }}>Phase 3</span>
+          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw', marginTop: '2%' }}>Phase 4</span>
+          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw', marginTop: '2%' }}>Beta</span>
+          <div className="flex flex-col items-center" style={{ width: '18%' }}>
+            <span className="text-[#d4c5a0]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.95vw', fontWeight: 600 }}>LAUNCH</span>
+            <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.7vw' }}>2027/2</span>
           </div>
         </div>
       </div>
