@@ -10,6 +10,15 @@ import bgFeral from '../assets/images/class-bg-feral.png';
 import bgArcticus from '../assets/images/class-bg-arcticus.png';
 import bgPyromancer from '../assets/images/class-bg-pyromancer.png';
 
+import sceneHunter from '../assets/images/class-scene-hunter.png';
+import sceneBeastmaster from '../assets/images/class-scene-beastmaster.png';
+import scenePaladin from '../assets/images/class-scene-paladin.png';
+import sceneTemplar from '../assets/images/class-scene-templar.png';
+import sceneHerbalist from '../assets/images/class-scene-herbalist.png';
+import sceneFeral from '../assets/images/class-scene-feral.png';
+import sceneArcticus from '../assets/images/class-scene-arcticus.png';
+import scenePyromancer from '../assets/images/class-scene-pyromancer.png';
+
 import iconHunter from '../assets/images/icon-hunter.png';
 import iconBeastmaster from '../assets/images/icon-beastmaster.png';
 import iconPaladin from '../assets/images/icon-paladin.png';
@@ -24,6 +33,7 @@ interface ClassInfo {
   name: string;
   category: string;
   bg: string;
+  scene: string;
   icon: string;
   description: string;
   stats: { dps: number; mobility: number; burst: number; utility: number; sustain: number };
@@ -31,42 +41,42 @@ interface ClassInfo {
 
 const classData: ClassInfo[] = [
   {
-    id: 'hunter', name: 'Hunter', category: 'Archery', bg: bgHunter, icon: iconHunter,
+    id: 'hunter', name: 'Hunter', category: 'Archery', bg: bgHunter, scene: sceneHunter, icon: iconHunter,
     description: 'Masters of ranged combat, Hunters strike with deadly precision from afar. Their arrows find weakness in any armor, and their traps control the battlefield.',
     stats: { dps: 80, mobility: 70, burst: 60, utility: 40, sustain: 30 },
   },
   {
-    id: 'beastmaster', name: 'Beastmaster', category: 'Archery', bg: bgBeastmaster, icon: iconBeastmaster,
+    id: 'beastmaster', name: 'Beastmaster', category: 'Archery', bg: bgBeastmaster, scene: sceneBeastmaster, icon: iconBeastmaster,
     description: 'Beastmasters forge unbreakable bonds with wild creatures. Together with their companions, they overwhelm foes with coordinated strikes.',
     stats: { dps: 60, mobility: 60, burst: 40, utility: 70, sustain: 50 },
   },
   {
-    id: 'paladin', name: 'Paladin', category: 'Knight', bg: bgPaladin, icon: iconPaladin,
+    id: 'paladin', name: 'Paladin', category: 'Knight', bg: bgPaladin, scene: scenePaladin, icon: iconPaladin,
     description: 'Holy warriors clad in blessed armor, Paladins stand as bulwarks against darkness. Their divine power heals allies and smites the wicked.',
     stats: { dps: 50, mobility: 30, burst: 40, utility: 60, sustain: 90 },
   },
   {
-    id: 'templar', name: 'Templar', category: 'Knight', bg: bgTemplar, icon: iconTemplar,
+    id: 'templar', name: 'Templar', category: 'Knight', bg: bgTemplar, scene: sceneTemplar, icon: iconTemplar,
     description: 'Templars wield faith as both sword and shield. Their righteous fury devastates enemies while divine blessings protect their comrades.',
     stats: { dps: 70, mobility: 30, burst: 70, utility: 50, sustain: 60 },
   },
   {
-    id: 'herbalist', name: 'Herbalist', category: 'Druid', bg: bgHerbalist, icon: iconHerbalist,
+    id: 'herbalist', name: 'Herbalist', category: 'Druid', bg: bgHerbalist, scene: sceneHerbalist, icon: iconHerbalist,
     description: 'Herbalists channel the essence of nature to mend wounds and cure ailments. Their knowledge of ancient flora makes them invaluable healers.',
     stats: { dps: 20, mobility: 50, burst: 10, utility: 90, sustain: 80 },
   },
   {
-    id: 'feral', name: 'Feral', category: 'Druid', bg: bgFeral, icon: iconFeral,
+    id: 'feral', name: 'Feral', category: 'Druid', bg: bgFeral, scene: sceneFeral, icon: iconFeral,
     description: 'Ferals embrace the primal rage of nature, shapeshifting into savage beasts. In combat, their ferocity is unmatched.',
     stats: { dps: 75, mobility: 80, burst: 70, utility: 20, sustain: 40 },
   },
   {
-    id: 'arcticus', name: 'Arcticus', category: 'Mage', bg: bgArcticus, icon: iconArcticus,
+    id: 'arcticus', name: 'Arcticus', category: 'Mage', bg: bgArcticus, scene: sceneArcticus, icon: iconArcticus,
     description: 'Arcticus mages command the frozen elements, encasing foes in ice and unleashing blizzards that slow and shatter all resistance.',
     stats: { dps: 60, mobility: 40, burst: 80, utility: 60, sustain: 30 },
   },
   {
-    id: 'pyromancer', name: 'Pyromancer', category: 'Mage', bg: bgPyromancer, icon: iconPyromancer,
+    id: 'pyromancer', name: 'Pyromancer', category: 'Mage', bg: bgPyromancer, scene: scenePyromancer, icon: iconPyromancer,
     description: 'Pyromancers unleash devastating fire magic, engulfing the battlefield in flames. Their raw destructive power is unrivaled among all classes.',
     stats: { dps: 90, mobility: 40, burst: 95, utility: 20, sustain: 20 },
   },
@@ -141,20 +151,28 @@ export default function Classes() {
 
   return (
     <section className="relative w-full bg-black overflow-hidden" style={{ aspectRatio: '1440 / 1080' }}>
-      {/* Character background art — only the art, no UI */}
+      {/* Scene background + character art layered */}
       {classData.map(cls => (
-        <img
+        <div
           key={cls.id}
-          src={cls.bg}
-          alt={cls.name}
-          className="absolute w-full object-cover transition-opacity duration-500 pointer-events-none"
-          style={{
-            opacity: cls.id === activeId ? 1 : 0,
-            top: '13%',
-            left: 0,
-            height: '74%',
-          }}
-        />
+          className="absolute inset-0 transition-opacity duration-500 pointer-events-none"
+          style={{ opacity: cls.id === activeId ? 1 : 0 }}
+        >
+          {/* Scene backdrop */}
+          <img
+            src={cls.scene}
+            alt=""
+            className="absolute w-full object-cover"
+            style={{ top: '13%', left: 0, height: '74%' }}
+          />
+          {/* Character overlay */}
+          <img
+            src={cls.bg}
+            alt={cls.name}
+            className="absolute w-full object-cover"
+            style={{ top: '13%', left: 0, height: '74%' }}
+          />
+        </div>
       ))}
 
       {/* Dark vignette overlays for readability */}
