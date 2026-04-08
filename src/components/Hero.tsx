@@ -22,7 +22,7 @@ export default function Hero() {
         src={heroPaladin}
         alt="Paladin"
         className="absolute pointer-events-none"
-        style={{ right: '-8%', top: '48%', width: '40%', height: 'auto' }}
+        style={{ right: '0%', top: '43%', width: '53.5%', height: 'auto' }}
       />
 
       {/* Top bar — matches Figma Frame 71 (1440×64, padding 20/50) */}

@@ -1,3 +1,5 @@
+import teamBg from '../assets/images/team-bg.png';
+
 const members = [
   { name: 'Marcos Vinícius', role: 'Artist' },
   { name: 'Marcelo Vinícius', role: 'Level Designer' },
@@ -43,11 +45,17 @@ function MemberCard({ name, role, size = 'sm' }: { name: string; role: string; s
 export default function Team() {
   return (
     <section className="relative w-full bg-black overflow-hidden" style={{ aspectRatio: '1440 / 900' }}>
-      {/* Subtle gradient background */}
+      {/* Background from Figma */}
+      <img
+        src={teamBg}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover pointer-events-none"
+      />
+      {/* Dark overlay for readability */}
       <div
-        className="absolute inset-0"
+        className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse at 50% 100%, rgba(80,50,10,0.25) 0%, transparent 60%), linear-gradient(to bottom, #000 0%, #0a0600 100%)',
+          background: 'linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%)',
         }}
       />
 
