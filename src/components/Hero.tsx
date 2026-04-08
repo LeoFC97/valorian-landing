@@ -147,6 +147,7 @@ export default function Hero() {
               fontWeight: 500,
               letterSpacing: '0.15em',
               textShadow: '0 0 10px rgba(100,180,255,0.4)',
+              paddingBottom: '1%',
             }}
           >
             PLAY NOW
@@ -157,16 +158,16 @@ export default function Hero() {
       {/* Timeline — Figma asset + real text labels */}
       <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '77%', width: '35%' }}>
         <img src={timelineNew} alt="" className="w-full h-auto pointer-events-none" />
-        {/* Phase labels positioned above timeline markers */}
-        <div className="absolute inset-0 flex items-start justify-between" style={{ paddingLeft: '2%', paddingRight: '0%' }}>
+        {/* Phase labels positioned below timeline crystals */}
+        <div className="absolute left-0 right-0 flex items-start justify-between" style={{ top: '100%', paddingTop: '0.3vw', paddingLeft: '2%', paddingRight: '0%' }}>
           <div className="flex flex-col items-center" style={{ width: '18%' }}>
             <span className="text-[#d4c5a0]" style={{ fontFamily: "'Cinzel', serif", fontSize: '1.1vw', fontWeight: 600 }}>Phase 1</span>
             <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.7vw' }}>2026/1</span>
           </div>
-          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw', marginTop: '2%' }}>Phase 2</span>
-          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw', marginTop: '2%' }}>Phase 3</span>
-          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw', marginTop: '2%' }}>Phase 4</span>
-          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw', marginTop: '2%' }}>Beta</span>
+          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw' }}>Phase 2</span>
+          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw' }}>Phase 3</span>
+          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw' }}>Phase 4</span>
+          <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.65vw' }}>Beta</span>
           <div className="flex flex-col items-center" style={{ width: '18%' }}>
             <span className="text-[#d4c5a0]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.95vw', fontWeight: 600 }}>LAUNCH</span>
             <span className="text-[#8a7b5a]" style={{ fontFamily: "'Cinzel', serif", fontSize: '0.7vw' }}>2027/2</span>
