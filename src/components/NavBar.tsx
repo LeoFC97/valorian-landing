@@ -7,7 +7,6 @@ const navLinks = [
   { label: 'Gameplay', href: '#gameplay' },
   { label: 'Classes', href: '#classes' },
   { label: 'Team', href: '#team' },
-  { label: 'Founder', href: '#founder' },
 ];
 
 export default function NavBar() {
@@ -43,6 +42,7 @@ export default function NavBar() {
               fontWeight: 600,
               letterSpacing: '0.05em',
               textDecoration: 'none',
+              textShadow: '0 0 14px rgba(214,181,100,1)',
             }}
           >
             {link.label}
