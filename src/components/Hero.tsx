@@ -22,8 +22,8 @@ export default function Hero() {
         className="absolute pointer-events-none"
         style={{
           right: '0%',
-          top: '42%',
-          width: '53.5%',
+          top: '48%',
+          width: '38%',
           maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%), linear-gradient(to right, transparent 0%, black 20%, black 100%)',
           WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%), linear-gradient(to right, transparent 0%, black 20%, black 100%)',
           maskComposite: 'intersect',
