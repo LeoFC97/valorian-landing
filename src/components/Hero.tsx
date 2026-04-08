@@ -147,7 +147,7 @@ export default function Hero() {
               fontWeight: 500,
               letterSpacing: '0.15em',
               textShadow: '0 0 10px rgba(100,180,255,0.4)',
-              paddingBottom: '1%',
+              transform: 'translateY(-12%)',
             }}
           >
             PLAY NOW
