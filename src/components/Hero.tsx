@@ -1,5 +1,5 @@
 import heroCityBg from '../assets/images/hero-city-bg.png';
-import heroPaladin from '../assets/images/hero-paladin-new.png';
+import heroPaladin from '../assets/images/hero-paladin-figma.png';
 import logoWithOrnament from '../assets/images/logo-with-ornament.png';
 import playNowFrame from '../assets/images/play-now-frame.png';
 import timelineNew from '../assets/images/timeline-new.png';
@@ -17,13 +17,25 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover pointer-events-none"
       />
 
-      {/* Paladin character */}
-      <img
-        src={heroPaladin}
-        alt="Paladin"
+      {/* Paladin character — with fade-out edges for seamless scroll feel */}
+      <div
         className="absolute pointer-events-none"
-        style={{ right: '0%', top: '50%', width: '42%', height: 'auto' }}
-      />
+        style={{
+          right: '0%',
+          top: '42%',
+          width: '53.5%',
+          maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%), linear-gradient(to right, transparent 0%, black 20%, black 100%)',
+          WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 70%, transparent 100%), linear-gradient(to right, transparent 0%, black 20%, black 100%)',
+          maskComposite: 'intersect',
+          WebkitMaskComposite: 'destination-in',
+        }}
+      >
+        <img
+          src={heroPaladin}
+          alt="Paladin"
+          className="w-full h-auto"
+        />
+      </div>
 
       {/* Top bar — matches Figma Frame 71 (1440×64, padding 20/50) */}
       <div
