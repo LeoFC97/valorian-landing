@@ -218,17 +218,26 @@ export default function Classes() {
         }}
       >
         <div
-          className="relative px-[1.2vw] py-[0.8vw]"
+          className="relative px-[1.2vw] py-[1vw]"
           style={{
-            background: 'linear-gradient(135deg, rgba(10,8,4,0.85), rgba(20,16,8,0.9))',
-            border: '1px solid rgba(197,148,74,0.3)',
+            background: 'linear-gradient(135deg, rgba(10,8,4,0.75), rgba(20,16,8,0.8))',
             borderRadius: '2px',
           }}
         >
-          {/* Top gold line */}
-          <div className="absolute top-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-[#c5944a] to-transparent" />
-          {/* Bottom gold line */}
-          <div className="absolute bottom-0 left-[10%] right-[10%] h-px bg-gradient-to-r from-transparent via-[#c5944a] to-transparent" />
+          {/* Top gold line with diamond on left */}
+          <div className="absolute top-0 left-0 right-0 flex items-center">
+            <svg viewBox="0 0 12 12" style={{ width: '0.6vw', height: '0.6vw', marginTop: '-0.3vw', flexShrink: 0 }}>
+              <rect x="2" y="2" width="8" height="8" transform="rotate(45 6 6)" fill="#c5944a" />
+            </svg>
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to right, #c5944a, transparent)' }} />
+          </div>
+          {/* Bottom gold line with diamond on right */}
+          <div className="absolute bottom-0 left-0 right-0 flex items-center">
+            <div className="flex-1 h-px" style={{ background: 'linear-gradient(to left, #c5944a, transparent)' }} />
+            <svg viewBox="0 0 12 12" style={{ width: '0.6vw', height: '0.6vw', marginBottom: '-0.3vw', flexShrink: 0 }}>
+              <rect x="2" y="2" width="8" height="8" transform="rotate(45 6 6)" fill="#c5944a" />
+            </svg>
+          </div>
           <p
             style={{
               fontFamily: "'Georgia', serif",
