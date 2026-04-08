@@ -220,7 +220,7 @@ export default function Classes() {
         <div
           className="relative px-[1.2vw] py-[1vw]"
           style={{
-            background: 'linear-gradient(135deg, rgba(10,8,4,0.75), rgba(20,16,8,0.8))',
+            background: 'linear-gradient(135deg, rgba(8,12,22,0.78), rgba(12,18,30,0.82))',
             borderRadius: '2px',
           }}
         >
