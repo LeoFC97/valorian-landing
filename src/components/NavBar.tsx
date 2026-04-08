@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import navOrnamentFrame from '../assets/images/nav-ornament-frame.png';
 import navOrnamentDivider from '../assets/images/nav-ornament-divider.png';
 
@@ -10,6 +11,8 @@ const navLinks = [
 ];
 
 export default function NavBar() {
+  const [activeLink, setActiveLink] = useState('Home');
+
   return (
     <nav className="relative flex items-center justify-center" style={{ height: '4.2vw' }}>
       {/* Ornamental frame behind links */}
@@ -22,11 +25,12 @@ export default function NavBar() {
       <div
         className="absolute z-[5]"
         style={{
-          width: '85.8%',
-          height: '70.7%',
-          top: '7.4%',
-          left: '7.1%',
+          width: '71.5%',
+          height: '58%',
+          top: '16%',
+          left: '14.2%',
           background: 'rgba(0,7,11,0.8)',
+          borderRadius: '2px',
         }}
       />
       {/* Actual nav links */}
@@ -35,7 +39,8 @@ export default function NavBar() {
           <a
             key={link.label}
             href={link.href}
-            className="text-white hover:text-[#f0d080] transition-colors"
+            onClick={() => setActiveLink(link.label)}
+            className="relative text-white hover:text-[#f0d080] transition-colors flex flex-col items-center"
             style={{
               fontFamily: "'Cinzel', serif",
               fontSize: '1.18vw',
@@ -46,6 +51,12 @@ export default function NavBar() {
             }}
           >
             {link.label}
+            {/* Active indicator arrow */}
+            {activeLink === link.label && (
+              <svg viewBox="0 0 12 8" style={{ width: '0.6vw', height: '0.4vw', marginTop: '0.15vw' }}>
+                <polygon points="6,8 0,0 12,0" fill="#e5b723" />
+              </svg>
+            )}
           </a>
         ))}
       </div>

@@ -51,7 +51,7 @@ export default function Team() {
         }}
       />
 
-      <div className="relative z-10 flex flex-col items-center h-full" style={{ paddingTop: '4%' }}>
+      <div className="relative z-10 flex flex-col items-center justify-center h-full">
         {/* Title */}
         <div className="flex flex-col items-center gap-[0.3vw]">
           <div className="w-[8vw] h-[1px] bg-gradient-to-r from-transparent via-[#c5944a] to-transparent" />

@@ -84,7 +84,7 @@ export default function Lore() {
           src={s.bg}
           alt={s.title}
           className="absolute w-full object-cover transition-opacity duration-500 pointer-events-none"
-          style={{ opacity: i === active ? 1 : 0, top: '15%', left: 0, height: '70%' }}
+          style={{ opacity: i === active ? 1 : 0, top: '0%', left: 0, height: '100%' }}
         />
       ))}
 
@@ -154,10 +154,10 @@ export default function Lore() {
               </span>
             </div>
 
-            {/* Body text overlaid inside frame */}
+            {/* Body text overlaid inside frame — scrollable */}
             <div
               className="absolute left-1/2 -translate-x-1/2"
-              style={{ top: '22%', width: '78%', height: '55%', overflow: 'hidden' }}
+              style={{ top: '22%', width: '78%', height: '55%', overflowY: 'auto', overflowX: 'hidden' }}
             >
               <p
                 className="text-[#edca87]"

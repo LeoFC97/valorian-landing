@@ -198,7 +198,7 @@ export default function Classes() {
         className="absolute z-10 gold-title"
         style={{
           left: '6%',
-          top: '55%',
+          top: '52%',
           fontFamily: "'Cinzel', serif",
           fontSize: '3.8vw',
           fontWeight: 400,
@@ -213,7 +213,7 @@ export default function Classes() {
         className="absolute z-10"
         style={{
           left: '6.5%',
-          top: '62%',
+          top: '59%',
           width: '30%',
         }}
       >
@@ -285,8 +285,6 @@ export default function Classes() {
                       height: '5.2vw',
                       borderRadius: '4px',
                       overflow: 'hidden',
-                      outline: cls.id === activeId ? '2px solid #e5b723' : 'none',
-                      outlineOffset: '-2px',
                       filter: cls.id === activeId ? 'brightness(1.2)' : 'brightness(0.7)',
                     }}
                   >
