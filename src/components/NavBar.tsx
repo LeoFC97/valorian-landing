@@ -1,4 +1,5 @@
 import navOrnamentFrame from '../assets/images/nav-ornament-frame.png';
+import navOrnamentDivider from '../assets/images/nav-ornament-divider.png';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -48,6 +49,13 @@ export default function NavBar() {
           </a>
         ))}
       </div>
+      {/* Decorative divider below nav — Figma Union element */}
+      <img
+        src={navOrnamentDivider}
+        alt=""
+        className="absolute pointer-events-none"
+        style={{ bottom: '-12%', left: '50%', transform: 'translateX(-50%)', width: '4vw', height: 'auto' }}
+      />
     </nav>
   );
 }
