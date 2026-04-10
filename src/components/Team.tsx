@@ -72,26 +72,20 @@ export default function Team() {
           <div className="w-[8vw] h-[1px] bg-gradient-to-r from-transparent via-[#c5944a] to-transparent" />
         </div>
 
-        {/* Members in diamond formation */}
-        <div className="relative" style={{ width: '50vw', height: '32vw', marginTop: '3%' }}>
-          {/* Top center */}
-          <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '0%' }}>
-            <MemberCard name={members[2].name} role={members[2].role} />
-          </div>
-          {/* Middle left */}
-          <div className="absolute" style={{ left: '2%', top: '30%' }}>
+        {/* Members in diamond formation — all same size */}
+        <div className="relative" style={{ width: '50vw', height: '30vw', marginTop: '3%' }}>
+          {/* Top — 2 members */}
+          <div className="absolute flex justify-center" style={{ top: '0%', left: '15%', right: '15%', gap: '8vw' }}>
             <MemberCard name={members[0].name} role={members[0].role} />
-          </div>
-          {/* Middle right */}
-          <div className="absolute" style={{ right: '2%', top: '30%' }}>
-            <MemberCard name={members[3].name} role={members[3].role} />
-          </div>
-          {/* Bottom left */}
-          <div className="absolute" style={{ left: '18%', top: '65%' }}>
             <MemberCard name={members[1].name} role={members[1].role} />
           </div>
-          {/* Bottom right */}
-          <div className="absolute" style={{ right: '18%', top: '65%' }}>
+          {/* Center */}
+          <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '38%' }}>
+            <MemberCard name={members[2].name} role={members[2].role} />
+          </div>
+          {/* Bottom — 2 members */}
+          <div className="absolute flex justify-center" style={{ top: '70%', left: '15%', right: '15%', gap: '8vw' }}>
+            <MemberCard name={members[3].name} role={members[3].role} />
             <MemberCard name={members[4].name} role={members[4].role} />
           </div>
         </div>

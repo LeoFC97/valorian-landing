@@ -99,3 +99,22 @@ body {
   font-family: 'Cinzel', serif;
   font-size: 32px;
 }
+
+/* Lore text box scrollbar — styled to match the dark/gold theme */
+.lore-scroll::-webkit-scrollbar {
+  width: 0.35vw;
+}
+.lore-scroll::-webkit-scrollbar-track {
+  background: rgba(11, 18, 21, 0.8);
+  border: 1px solid rgba(253, 191, 8, 0.3);
+  border-radius: 9999px;
+}
+.lore-scroll::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #003053, #84680f);
+  border: 1px solid #84680f;
+  border-radius: 9999px;
+}
+.lore-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #84680f rgba(11, 18, 21, 0.8);
+}
