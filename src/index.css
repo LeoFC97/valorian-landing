@@ -100,21 +100,21 @@ body {
   font-size: 32px;
 }
 
-/* Lore text box scrollbar — styled to match the dark/gold theme */
+/* Lore scrollbar — Figma: track #0b1215 + stroke #fdbf0880, thumb #003053 + stroke #84680f */
 .lore-scroll::-webkit-scrollbar {
-  width: 0.35vw;
+  width: 5px;
 }
 .lore-scroll::-webkit-scrollbar-track {
-  background: rgba(11, 18, 21, 0.8);
-  border: 1px solid rgba(253, 191, 8, 0.3);
-  border-radius: 9999px;
+  background: #0b1215;
+  border: 1px solid rgba(253, 191, 8, 0.5);
+  border-radius: 10px;
 }
 .lore-scroll::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #003053, #84680f);
+  background: #003053;
   border: 1px solid #84680f;
-  border-radius: 9999px;
+  border-radius: 10px;
 }
 .lore-scroll {
   scrollbar-width: thin;
-  scrollbar-color: #84680f rgba(11, 18, 21, 0.8);
+  scrollbar-color: #003053 #0b1215;
 }
