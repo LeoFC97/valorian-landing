@@ -24,7 +24,7 @@ export default function Footer() {
           <p
             className="text-[#edca87]"
             style={{
-              fontFamily: "'Georgia', serif",
+              fontFamily: "'Fontin', 'Georgia', serif",
               fontSize: '0.76vw',
               lineHeight: 1.45,
               textAlign: 'justify',

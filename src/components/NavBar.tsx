@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import navOrnamentFrame from '../assets/images/nav-ornament-frame.png';
 import navOrnamentDivider from '../assets/images/nav-ornament-divider.png';
+import navActiveIndicator from '../assets/images/nav-active-indicator.png';
 
 const navLinks = [
   { label: 'Home', href: '#home' },
@@ -40,9 +41,9 @@ export default function NavBar() {
             key={link.label}
             href={link.href}
             onClick={() => setActiveLink(link.label)}
-            className="relative text-white hover:text-[#f0d080] transition-colors flex flex-col items-center"
+            className="relative text-white/80 hover:text-white transition-all flex flex-col items-center"
             style={{
-              fontFamily: "'Cinzel', serif",
+              fontFamily: "'OptimusPrincepsSemiBold', 'Cinzel', serif",
               fontSize: '1.18vw',
               fontWeight: 600,
               letterSpacing: '0.05em',
@@ -51,11 +52,13 @@ export default function NavBar() {
             }}
           >
             {link.label}
-            {/* Active indicator arrow */}
             {activeLink === link.label && (
-              <svg viewBox="0 0 12 8" style={{ width: '0.6vw', height: '0.4vw', marginTop: '0.15vw' }}>
-                <polygon points="6,8 0,0 12,0" fill="#e5b723" />
-              </svg>
+              <img
+                src={navActiveIndicator}
+                alt=""
+                className="absolute pointer-events-none"
+                style={{ bottom: '-0.6vw', width: '4vw', height: 'auto' }}
+              />
             )}
           </a>
         ))}

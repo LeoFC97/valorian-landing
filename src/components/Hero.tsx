@@ -1,7 +1,7 @@
 import heroCityBg from '../assets/images/hero-city-bg.png';
 import heroPaladin from '../assets/images/hero-paladin-with-effect.png';
 import logoWithOrnament from '../assets/images/logo-with-ornament.png';
-import playNowFrame from '../assets/images/play-now-frame.png';
+import playNowBtn from '../assets/images/play-now-btn.png';
 import timelineNew from '../assets/images/timeline-new.png';
 import iconKnightGold from '../assets/images/icon-knight-gold.png';
 import flagBrazil from '../assets/images/flag-brazil.png';
@@ -22,7 +22,7 @@ export default function Hero() {
         src={heroPaladin}
         alt="Paladin"
         className="absolute pointer-events-none"
-        style={{ right: '0%', top: '43%', width: '53.5%', height: 'auto' }}
+        style={{ right: '-18%', top: '43%', width: '53.5%', height: 'auto' }}
       />
 
       {/* Top bar — matches Figma Frame 71 (1440×64, padding 20/50) */}
@@ -45,16 +45,16 @@ export default function Hero() {
             />
             <span
               style={{
-                fontFamily: "'Georgia', serif",
+                fontFamily: "'OptimusPrincepsSemiBold', 'Cinzel', serif",
                 fontSize: '1.1vw',
-                fontWeight: 500,
+                fontWeight: 600,
                 letterSpacing: '0.02em',
                 background: 'linear-gradient(to bottom, #f7f7f7, #d2cd87)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
               }}
             >
-              SIGN IN
+              Sign In
             </span>
           </a>
 
@@ -68,14 +68,14 @@ export default function Hero() {
           >
             <span
               style={{
-                fontFamily: "'Georgia', serif",
+                fontFamily: "'OptimusPrincepsSemiBold', 'Cinzel', serif",
                 fontSize: '1.1vw',
-                fontWeight: 500,
+                fontWeight: 600,
                 letterSpacing: '0.02em',
                 color: '#ffffff',
               }}
             >
-              CREATE ACCOUNT
+              Create Account
             </span>
           </a>
 
@@ -127,32 +127,17 @@ export default function Hero() {
         </span>
       </div>
 
-      {/* Play Now Button — Figma ornate frame + real text */}
+      {/* Play Now Button — from componente total (text baked in) */}
       <a
         href="#play"
-        className="absolute left-1/2 -translate-x-1/2 group"
-        style={{ top: '53.7%', width: '32.6%' }}
+        className="absolute left-1/2 -translate-x-1/2 hover:brightness-125 active:scale-[0.98] transition-all"
+        style={{ top: '55%', width: '19.2%' }}
       >
-        <div className="relative flex items-center justify-center group-hover:brightness-125 group-active:scale-[0.98] transition-all">
-          <img
-            src={playNowFrame}
-            alt=""
-            className="w-full h-auto pointer-events-none"
-          />
-          <span
-            className="absolute text-white"
-            style={{
-              fontFamily: "'Cinzel', serif",
-              fontSize: '1.8vw',
-              fontWeight: 500,
-              letterSpacing: '0.15em',
-              textShadow: '0 0 10px rgba(100,180,255,0.4)',
-              transform: 'translateY(-8%)',
-            }}
-          >
-            PLAY NOW
-          </span>
-        </div>
+        <img
+          src={playNowBtn}
+          alt="Play Now"
+          className="w-full h-auto pointer-events-none"
+        />
       </a>
 
       {/* Timeline — Figma asset + real text labels */}

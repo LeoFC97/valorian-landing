@@ -162,7 +162,7 @@ export default function Lore() {
               <p
                 className="text-[#edca87]"
                 style={{
-                  fontFamily: "'Georgia', serif",
+                  fontFamily: "'Fontin', 'Georgia', serif",
                   fontSize: '0.83vw',
                   lineHeight: 1.4,
                   textAlign: 'center',

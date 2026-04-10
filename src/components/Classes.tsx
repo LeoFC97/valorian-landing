@@ -240,7 +240,7 @@ export default function Classes() {
           </div>
           <p
             style={{
-              fontFamily: "'Georgia', serif",
+              fontFamily: "'Fontin', 'Georgia', serif",
               fontSize: '0.85vw',
               lineHeight: 1.5,
               color: '#edca87',

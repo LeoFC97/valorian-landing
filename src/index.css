@@ -16,6 +16,47 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: 'OptimusPrincepsSemiBold';
+  src: url('https://fonts.cdnfonts.com/s/8855/OptimusPrincepsSemiBold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fontin';
+  src: url('https://fonts.cdnfonts.com/s/25230/Fontin-Regular.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fontin';
+  src: url('https://fonts.cdnfonts.com/s/25230/Fontin-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fontin';
+  src: url('https://fonts.cdnfonts.com/s/25230/Fontin-Italic.woff') format('woff');
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fontin';
+  src: url('https://fonts.cdnfonts.com/s/25230/Fontin-SmallCaps.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  font-variant: small-caps;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -29,7 +70,7 @@ html {
 body {
   background: #000;
   color: #edca87;
-  font-family: 'Georgia', serif;
+  font-family: 'Fontin', 'Georgia', serif;
   overflow-x: hidden;
 }
 

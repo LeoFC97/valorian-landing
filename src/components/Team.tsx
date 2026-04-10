@@ -34,7 +34,7 @@ function MemberCard({ name, role, size = 'sm' }: { name: string; role: string; s
         >
           {name}
         </p>
-        <p className="text-[#a89060]" style={{ fontFamily: 'Georgia, serif', fontSize: size === 'lg' ? '0.8vw' : '0.65vw' }}>
+        <p className="text-[#a89060]" style={{ fontFamily: "'Fontin', 'Georgia', serif", fontSize: size === 'lg' ? '0.8vw' : '0.65vw' }}>
           {role}
         </p>
       </div>
@@ -59,7 +59,7 @@ export default function Team() {
         }}
       />
 
-      <div className="relative z-10 flex flex-col items-center justify-center h-full">
+      <div className="relative z-10 flex flex-col items-center h-full" style={{ paddingTop: '6%' }}>
         {/* Title */}
         <div className="flex flex-col items-center gap-[0.3vw]">
           <div className="w-[8vw] h-[1px] bg-gradient-to-r from-transparent via-[#c5944a] to-transparent" />
@@ -72,11 +72,28 @@ export default function Team() {
           <div className="w-[8vw] h-[1px] bg-gradient-to-r from-transparent via-[#c5944a] to-transparent" />
         </div>
 
-        {/* Members */}
-        <div className="flex justify-center gap-[4vw]" style={{ marginTop: '4%' }}>
-          {members.map(m => (
-            <MemberCard key={m.name} name={m.name} role={m.role} />
-          ))}
+        {/* Members in diamond formation */}
+        <div className="relative" style={{ width: '50vw', height: '32vw', marginTop: '3%' }}>
+          {/* Top center */}
+          <div className="absolute left-1/2 -translate-x-1/2" style={{ top: '0%' }}>
+            <MemberCard name={members[2].name} role={members[2].role} />
+          </div>
+          {/* Middle left */}
+          <div className="absolute" style={{ left: '2%', top: '30%' }}>
+            <MemberCard name={members[0].name} role={members[0].role} />
+          </div>
+          {/* Middle right */}
+          <div className="absolute" style={{ right: '2%', top: '30%' }}>
+            <MemberCard name={members[3].name} role={members[3].role} />
+          </div>
+          {/* Bottom left */}
+          <div className="absolute" style={{ left: '18%', top: '65%' }}>
+            <MemberCard name={members[1].name} role={members[1].role} />
+          </div>
+          {/* Bottom right */}
+          <div className="absolute" style={{ right: '18%', top: '65%' }}>
+            <MemberCard name={members[4].name} role={members[4].role} />
+          </div>
         </div>
       </div>
     </section>
